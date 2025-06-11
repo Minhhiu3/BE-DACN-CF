@@ -1,8 +1,12 @@
-import Category from "../models/Category.js";
-import handleAsync from "../helpers/handleAsync.js";
-import createReponse from "../helpers/response.js";
-import createError from "../helpers/error.js";
+// Đúng nếu file là "category.Model.js"
+import Category from "./category.model.js";
 
+import handleAsync from "../../common/helpers/handleAsync.js";
+import createReponse from "../../common/helpers/response.js";
+import createError from "../../common/helpers/error.js";
+import findByIdCategory from "./category.service.js";
+
+//them moi san pham
 export const createCategory = handleAsync(async (req, res, next) => {
     const existing = await Category.findOne({ title: req.body.title })
     if (existing) return next(createError(400, "This category already exists!"))
@@ -10,6 +14,7 @@ export const createCategory = handleAsync(async (req, res, next) => {
     return res.json(createReponse(true, 201, "Create Category successfully!", data))
 })
 
+//lay ra all san pham
 export const fetchAllCategory = handleAsync(async (req, res, next) => {
     const data = await Category.find();
     if (data) {
@@ -18,6 +23,7 @@ export const fetchAllCategory = handleAsync(async (req, res, next) => {
     next(createError(400, "Có lỗi khi lấy danh sách danh mục"))
 })
 
+// chinh sua san pham
 export const editCategory = handleAsync(async (req, res, next) => {
     const { id } = req.params
     if (id) {
@@ -27,15 +33,16 @@ export const editCategory = handleAsync(async (req, res, next) => {
     next(createError(false, 404, "Có lỗi khi update categori!"))
 })
 
+//chi tiet san pham
 export const detailCategory = handleAsync(async (req, res, next) => {
-    const { id } = req.params
-    if (id) {
-        const data = await Category.findById(id)
-        return res.json(createReponse(true, 200, "Lấy chi tiết danh mục thành công!", data))
+    const data = await findByIdCategory(req.params.id);
+    if (data) {
+        next(createError(404, "category không tồn tại"))
     }
-    next(createError(false, 404, "Categori k tồn tại!"))
+    return res.json(createReponse(true, 200, "Lấy chi tiết danh mục thành công!", data));
 })
 
+// xoa san pham
 export const deleteCategory = handleAsync(async (req, res, next) => {
     const { id } = req.params;
     if (id) {
@@ -45,6 +52,7 @@ export const deleteCategory = handleAsync(async (req, res, next) => {
     next(createError(false, 400, "xóa danh mục thất bại!"))
 })
 
+//xoa mem san pham
 export const softDeleteCategory = handleAsync(async (req, res, next) => {
     const { id } = req.params
     if (id) {
@@ -56,6 +64,7 @@ export const softDeleteCategory = handleAsync(async (req, res, next) => {
     next(createError(400, "có lỗi khi ẩn"))
 })
 
+//khoi phuc san pham bi xoa mem
 export const restoreCategory = handleAsync(async (req, res, next) => {
     const { id } = req.params
     if (id) {

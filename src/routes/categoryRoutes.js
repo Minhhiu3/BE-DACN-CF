@@ -1,12 +1,12 @@
 // src/routes/categoryRoutes.js
 import express from 'express';
-import { createCategory, fetchAllCategory, editCategory, detailCategory, deleteCategory, softDeleteCategory, restoreCategory } from '../controllers/categoryController.js';
+import { createCategory, fetchAllCategory, editCategory, detailCategory, deleteCategory, softDeleteCategory, restoreCategory } from '../modules/category/categoryController.js';
 
 const routerCategory = express.Router();
 
 //  route tại đây
 
-routerCategory.get('/all', fetchAllCategory);
+routerCategory.get('/', fetchAllCategory);
 routerCategory.post('/', createCategory);
 routerCategory.put('/:id', editCategory);
 routerCategory.get('/:id', detailCategory);

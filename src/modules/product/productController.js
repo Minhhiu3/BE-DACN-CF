@@ -1,7 +1,7 @@
-import Product from "../models/Product.js";
-import handleAsync from "../helpers/handleAsync.js";
-import createResponse from "../helpers/response.js";
-import createError from "../helpers/error.js";
+import Product from "./modelProduct.js";
+import handleAsync from "../../common/helpers/handleAsync.js";
+import createResponse from "../../common/helpers/response.js";
+import createError from "../../common/helpers/error.js";
 
 // Thêm sản phẩm
 export const createProduct = handleAsync(async (req, res, next) => {

@@ -1,5 +1,5 @@
 import express from 'express';
-import { createProduct, fetchAllProduct, fetchProductById, editProduct, deleteProduct, softDeleteProduct, restoreProduct } from '../controllers/productController.js';
+import { createProduct, fetchAllProduct, fetchProductById, editProduct, deleteProduct, softDeleteProduct, restoreProduct } from '../modules/product/productController.js';
 
 const routerProducts = express.Router();
 //  route tại đây
