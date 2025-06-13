@@ -1,10 +1,10 @@
 // Đúng nếu file là "category.Model.js"
-import Category from "./category.model.js";
+import Category from "./sub-category.model.js";
 
 import handleAsync from "../../common/helpers/handleAsync.js";
 import createReponse from "../../common/helpers/response.js";
 import createError from "../../common/helpers/error.js";
-import findByIdCategory from "./category.service.js";
+import findByIdCategory from "./sub-category.service.js";
 import MESSAGES from "../../common/helpers/message.js";
 
 //them moi san pham

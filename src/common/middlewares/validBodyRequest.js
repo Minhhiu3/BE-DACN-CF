@@ -1,13 +1,13 @@
-import createError from "../helpers/error";
-import { z } from "zod";
-const validBodyRequest = (req, res, next) => {
+import createError from "../helpers/error.js";
+
+const validBodyRequest = (schema) => (req, res, next) => {
     try {
-        const data = z.parse(req.body);
+        const data = schema.parse(req.body);
         req.data = data;
-        next;
-    } catch (error) {
-        const err = error.errors[0];
-        return res.status(400).json({ "valid body request": `${err.path} : ${err.message}` });
+        next();
+    } catch (err) {
+        const error = err.errors[0];
+        return res.status(400).json({ "Valid body request": `${error.path}: ${error.message}` });
     }
 };
 

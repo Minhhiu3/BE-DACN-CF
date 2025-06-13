@@ -1,4 +1,4 @@
-import routerCategory from "./categoryRoutes.js";
+import routerCategory from "../modules/category/categoryRoutes.js";
 import { Router } from 'express';
 import productsRoutes from './productsRoutes.js';
 
