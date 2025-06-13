@@ -25,12 +25,18 @@ export const fetchAllCategory = handleAsync(async (req, res, next) => {
 
 // chinh sua san pham
 export const editCategory = handleAsync(async (req, res, next) => {
-    const { id } = req.params
-    if (id) {
-        const data = await Category.findByIdAndUpdate(id, req.body)
-        return res.json(createReponse(true, 200, "Update categori thành công!", data))
+    // const { id } = req.params
+    // if (id) {
+    //     const data = await Category.findByIdAndUpdate(id, req.body)
+    //     return res.json(createReponse(true, 200, "Update categori thành công!", data))
+    // }
+    // next(createError(false, 404, "Có lỗi khi update categori!"))
+    const data = await Category.findByIdAndUpdate(req, params.id, req.body);
+    if (data) {
+        return res.json(createReponse(true, 200, "tcong", data));
     }
-    next(createError(false, 404, "Có lỗi khi update categori!"))
+    next(createError(false, 404, "faill"));
+
 })
 
 //chi tiet san pham
@@ -56,8 +62,9 @@ export const deleteCategory = handleAsync(async (req, res, next) => {
 export const softDeleteCategory = handleAsync(async (req, res, next) => {
     const { id } = req.params
     if (id) {
-        await Category.findByIdAndUpdate(id, {
-            deletedAt: new Date()
+        await Category.findOneAndUpdate({ id, deletedAt: { $ne: null } }, {
+            deletedAt: new Date(),
+
         });
         return res.json(createReponse(true, 200, "Ẩn category thành công"));
     }
@@ -68,10 +75,13 @@ export const softDeleteCategory = handleAsync(async (req, res, next) => {
 export const restoreCategory = handleAsync(async (req, res, next) => {
     const { id } = req.params
     if (id) {
-        await Category.findByIdAndUpdate(id, {
-            deletedAt: null
-        });
+        await Category.findByIdAndUpdate(
+            { id, deletedAt: { $ne: null } },
+            {
+                deletedAt: null
+            }
+        );
         return res.json(createReponse(true, 200, "Khôi phục category thành công"));
     }
     next(createError(400, "có lỗi khi khôi phục danh mục"))
-})
+});
