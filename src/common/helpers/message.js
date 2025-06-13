@@ -65,10 +65,13 @@ const MESSAGES = {
         CREATE_ERROR: "Lỗi khi tạo danh mục",
         CREATE_ERROR_EXISTS: "Danh mục đã tồn tại",
         UPDATE_SUCCESS: "Cập nhật danh mục thành công",
+        UPDATE_ERROR: "Cập nhật danh mục thất bại",
         DELETE_SUCCESS: "Xóa danh mục thành công",
+        DELETE_ERROR: "Xóa danh mục KO thành công",
         NOT_FOUND: "Không tìm thấy danh mục",
         NAME_REQUIRED: "Tên danh mục là bắt buộc",
         HAS_SUBCATEGORIES: "Danh mục này có danh mục con, không thể xóa",
+
     },
 
     SUBCATEGORY: {
