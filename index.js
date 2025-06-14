@@ -4,6 +4,7 @@ import connectDB from './src/common/configs/db.js';
 import router from './src/routes/index.js';
 import errorHandler from './src/common/middlewares/errorHandle.js';
 import { HOST, PORT } from './src/common/configs/eviroments.js';
+import setupSwagger from './src/common/configs/swagger-config.js';
 
 connectDB();
 
@@ -27,9 +28,14 @@ app.use("/api", router);
 
 
 app.use(errorHandler)
-
+setupSwagger(app);
+//run swag
 
 
 app.listen(PORT, HOST, () => {
-    console.log(`server đang chạy ở http://${HOST}:${PORT}/`);
+    const server = app.listen(PORT, () => {
+        console.log(`Server đang chạy ở: http://${HOST}:${PORT}/api`);
+        console.log(`Swagger Docs sẵn sàng tại: ${HOST}:${PORT}/api-docs`);
+    });
+    console.log(server);
 });
