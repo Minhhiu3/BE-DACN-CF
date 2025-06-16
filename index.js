@@ -37,5 +37,4 @@ app.listen(PORT, HOST, () => {
         console.log(`Server đang chạy ở: http://${HOST}:${PORT}/api`);
         console.log(`Swagger Docs sẵn sàng tại: ${HOST}:${PORT}/api-docs`);
     });
-    console.log(server);
 });

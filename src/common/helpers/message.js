@@ -86,6 +86,9 @@ const MESSAGES = {
         CREATE_ERROR_EXISTS: "Danh mục con đã tồn tại",
         NOT_FOUND: "Không tìm thấy danh mục con",
         NAME_REQUIRED: "Tên danh mục con là bắt buộc",
+        CREATE_ERROR_PARRENT_ID: "Bắt buộc phải có danh mục cha",
+        TITLE_REQUIRED: "Tiêu đề là bắt buộc",
+        SLUG_REQUIRED: "Slug là bắt buộc",
     },
 
     ATTRIBUTE: {

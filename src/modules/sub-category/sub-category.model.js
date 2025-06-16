@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { required } from "zod/v4-mini";
 
-const categorySchema = new Schema({
+const subCategorySchema = new Schema({
     title: {
         type: String,
         unique: true,
@@ -28,5 +28,5 @@ const categorySchema = new Schema({
     timestamps: true,
     versionKey: false
 })
-const Category = mongoose.model('category', categorySchema);
-export default Category;
+const subCategoryModel = mongoose.model('subCategory', subCategorySchema);
+export default subCategoryModel;
