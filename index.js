@@ -31,9 +31,9 @@ app.use(errorHandler)
 setupSwagger(app);
 //run swag
 
-console.log(HOST);
+// console.log(HOST);
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, '0.0.0.0', () => {
     const server = app.listen(PORT, () => {
         console.log(`Server đang chạy ở: http://${HOST}:${PORT}/api`);
         console.log(`Swagger Docs sẵn sàng tại: ${HOST}:${PORT}/api-docs`);
