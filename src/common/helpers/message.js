@@ -52,6 +52,15 @@ const MESSAGES = {
         NAME_REQUIRED: "Tên sản phẩm là bắt buộc",
         PRICE_REQUIRED: "Giá sản phẩm là bắt buộc",
         INVALID_PRICE: "Giá sản phẩm không hợp lệ",
+        SLUG_REQUIRED: "Slug sản phẩm là bắt buộc",
+        PRODUCT_NAME_REQUIRED: "Bạn chưa có tên sản phẩm",
+        PRODUCT_PRICE_REQUIRED: "Bạn chưa có giá sản phẩm",
+        PRODUCT_DESCRIPTION_REQUIRED: "Bạn chưa có mô tả sản phẩm",
+        PRODUCT_STOCK_REQUIRED: "Bạn chưa có số lượng sản phẩm",
+        PRODUCT_IMAGE_REQUIRED: "Bạn chưa có hình ảnh sản phẩm",
+        PRODUCT_SPECIFICATION_REQUIRED: "Bạn chưa có thông số kỹ thuật của sản phẩm",
+        PRODUCT_SLUG_REQUIRED: "Bạn chưa có slug sản phẩm",
+        PRODUCT_THUMBNAIL_REQUIRED: "Bạn chưa có hình ảnh đại diện sản phẩm",
     },
 
     CATEGORY: {
