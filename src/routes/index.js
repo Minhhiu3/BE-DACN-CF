@@ -1,7 +1,7 @@
-import routerCategory from "../modules/category/categoryRoutes.js";
-import routerSubCategory from "../modules/sub-category/sub-categoryRoutes.js";
+import routerCategory from "../modules/category/category.routes.js";
+import routerSubCategory from "../modules/sub-category/sub-category.routes.js";
 import { Router } from 'express';
-import productsRoutes from '../modules/product/productsRoutes.js';
+import productsRoutes from '../modules/product/products.routes.js';
 
 const router = Router();
 

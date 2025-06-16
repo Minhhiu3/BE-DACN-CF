@@ -1,6 +1,6 @@
 import express from 'express';
-import { createProduct, fetchAllProduct, fetchProductById, editProduct, deleteProduct, softDeleteProduct, restoreProduct } from './productController.js';
-import createProductSchema from './productSchema.js';
+import { createProduct, fetchAllProduct, fetchProductById, editProduct, deleteProduct, softDeleteProduct, restoreProduct } from './product.controller.js';
+import createProductSchema from './product.schema.js';
 const routerProducts = express.Router();
 import validBodyRequest from '../../common/middlewares/validBodyRequest.js';
 //  route tại đây

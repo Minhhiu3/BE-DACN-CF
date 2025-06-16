@@ -1,4 +1,4 @@
-import Product from "./modelProduct.js";
+import Product from "./model.product.js";
 import handleAsync from "../../common/helpers/handleAsync.js";
 import createResponse from "../../common/helpers/response.js";
 import createError from "../../common/helpers/error.js";
