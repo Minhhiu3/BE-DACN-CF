@@ -33,7 +33,7 @@ setupSwagger(app);
 
 // console.log(HOST);
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, () => {
     const server = app.listen(PORT, () => {
         console.log(`Server đang chạy ở: http://${HOST}:${PORT}/api`);
         console.log(`Swagger Docs sẵn sàng tại: ${HOST}:${PORT}/api-docs`);
