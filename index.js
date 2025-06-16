@@ -31,6 +31,7 @@ app.use(errorHandler)
 setupSwagger(app);
 //run swag
 
+console.log(HOST);
 
 app.listen(PORT, HOST, () => {
     const server = app.listen(PORT, () => {

@@ -12,4 +12,4 @@ dotenv.config({
     overrideProcessEnv: true, // Ghi đè các biến môi trường đã tồn tại trong process.env
 })
 
-export const { DB_URI, HOST = '0.0.0.0', PORT } = process.env
+export const { DB_URI, HOST, PORT } = process.env
