@@ -1,0 +1,113 @@
+{
+    "products": [
+        {
+            "_id": "684fd400ddb976223c0c1b49",
+            "name": "Giày Thể Thao Nam Sneaker Trắng",
+            "thumbnail": "https://example.com/images/shoe-thumb.jpg",
+            "specification": "Chất liệu: da PU, đế cao su, màu trắng, phong cách Hàn Quốc",
+            "price": 450000,
+            "oldPrice": 520000,
+            "description": "Giày sneaker nam phong cách trẻ trung, năng động, dễ phối đồ với quần jeans, kaki.",
+            "rating": 4.2,
+            "stock": 85,
+            "soldCount": 57,
+            "image": "https://example.com/images/shoe-main.jpg",
+            "size": [
+                "39",
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "slug": "giay-the-thao-nam-sneaker-trang",
+            "seoTitle": "Giày Sneaker Nam Trắng Năng Động",
+            "seoDescription": "Giày thể thao nam chất liệu da PU, thoáng khí, phù hợp đi học, đi chơi.",
+            "tags": [
+                "giay",
+                "sneaker",
+                "giay-nam",
+                "the-thao"
+            ],
+            "brand": [
+                "Bitis Hunter"
+            ],
+            "categoryId": "684fd2e2ddb976223c0c1b3e",
+            "subCategoryId": "684fd0fbddb976223c0c1b30",
+            "deletedAt": null,
+            "createdAt": "2025-06-16T08:21:20.327Z",
+            "updatedAt": "2025-06-16T08:21:20.327Z"
+        },
+        {
+            "_id": "684fd401ddb976223c0c1b50",
+            "name": "Giày Lười Nam Công Sở Da Bò",
+            "thumbnail": "https://example.com/images/loafer-thumb.jpg",
+            "specification": "Chất liệu: da bò thật, đế cao su, phong cách công sở",
+            "price": 780000,
+            "oldPrice": 890000,
+            "description": "Giày lười nam lịch lãm phù hợp đi làm, dự tiệc, phối quần âu.",
+            "rating": 4.7,
+            "stock": 42,
+            "soldCount": 30,
+            "image": "https://example.com/images/loafer-main.jpg",
+            "size": [
+                "40",
+                "41",
+                "42",
+                "43"
+            ],
+            "slug": "giay-luoi-nam-cong-so-da-bo",
+            "seoTitle": "Giày Lười Nam Lịch Lãm",
+            "seoDescription": "Giày da thật công sở, mềm mại, bền, sang trọng.",
+            "tags": [
+                "giay",
+                "luoi",
+                "giay-nam",
+                "cong-so"
+            ],
+            "brand": [
+                "GiayViet"
+            ],
+            "categoryId": "684fd2e2ddb976223c0c1b3e",
+            "subCategoryId": "684fd0fbddb976223c0c1b30",
+            "deletedAt": null,
+            "createdAt": "2025-06-16T09:00:00.000Z",
+            "updatedAt": "2025-06-16T09:00:00.000Z"
+        },
+        {
+            "_id": "684fd402ddb976223c0c1b51",
+            "name": "Giày Boot Nam Cao Cổ Da Lộn",
+            "thumbnail": "https://example.com/images/boot-thumb.jpg",
+            "specification": "Chất liệu: da lộn, cổ cao, dây buộc chắc chắn, đế cao su",
+            "price": 990000,
+            "oldPrice": 1050000,
+            "description": "Boot cao cổ cá tính, giữ ấm tốt, phù hợp đi phượt, thời trang mùa đông.",
+            "rating": 4.5,
+            "stock": 26,
+            "soldCount": 15,
+            "image": "https://example.com/images/boot-main.jpg",
+            "size": [
+                "41",
+                "42",
+                "43",
+                "44"
+            ],
+            "slug": "giay-boot-nam-cao-co-da-lon",
+            "seoTitle": "Boot Nam Da Lộn Cá Tính",
+            "seoDescription": "Giày boot nam phong cách cá tính, chất liệu cao cấp, bền đẹp.",
+            "tags": [
+                "giay",
+                "boot",
+                "giay-nam",
+                "cao-co"
+            ],
+            "brand": [
+                "Dino Men"
+            ],
+            "categoryId": "684fd2e2ddb976223c0c1b3e",
+            "subCategoryId": "684fd0fbddb976223c0c1b30",
+            "deletedAt": null,
+            "createdAt": "2025-06-16T09:10:00.000Z",
+            "updatedAt": "2025-06-16T09:10:00.000Z"
+        }
+    ]
+}

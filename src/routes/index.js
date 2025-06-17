@@ -2,7 +2,7 @@ import routerCategory from "../modules/category/category.routes.js";
 import routerSubCategory from "../modules/sub-category/sub-category.routes.js";
 import { Router } from 'express';
 import productsRoutes from '../modules/product/products.routes.js';
-import routerBrand from "../modules/brand/category.routes.js";
+import routerBrand from "../modules/brand/brand.routes.js";
 const router = Router();
 
 //product api
