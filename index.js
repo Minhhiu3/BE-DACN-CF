@@ -6,6 +6,7 @@ import errorHandler from './src/common/middlewares/errorHandle.js';
 import { HOST, PORT } from './src/common/configs/eviroments.js';
 import setupSwagger from './src/common/configs/swagger-config.js';
 import upload from './src/common/middlewares/upload.js';
+// import upload from './src/common/middlewares/upload.js';
 
 connectDB();
 
@@ -27,16 +28,13 @@ app.use("/api", router);
 //     res.send("API is running...");
 // });
 
-router.post('/upload-image', upload.single('image'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ message: 'Không có file nào được upload' });
-    }
-
-    // file đã được upload lên Cloudinary, đường dẫn nằm trong req.file.path
-    res.json({
-        message: 'Upload thành công!',
-        url: req.file.path,
-    });
+router.post('/upload', upload.single('image'), (req, res) => {
+  try {
+    const imageUrl = req.file.path; // ✅ Đây là link ảnh sau khi upload lên Cloudinary
+    res.json({ success: true, imageUrl });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
 });
 app.use(errorHandler)
 setupSwagger(app);
