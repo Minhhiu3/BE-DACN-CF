@@ -1,4 +1,4 @@
-import handleAsync from "../../common/helpers/handleAsync";
+import handleAsync from "../../common/helpers/handleAsync.js";
 
 // export const createCart = handleAsync(async (req,res,next) => {
 //     const { user } = req.user;

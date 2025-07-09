@@ -11,20 +11,25 @@ const MESSAGES = {
         LOGIN_SUCCESS: "Đăng nhập thành công",
         LOGOUT_SUCCESS: "Đăng xuất thành công",
         REGISTER_SUCCESS: "Đăng ký thành công",
+        REGISTER_FAILED: "Đăng ký thất bại",
         LOGIN_FAILED: "Đăng nhập thất bại, vui lòng kiểm tra lại thông tin",
         UNAUTHORIZED: "Bạn cần đăng nhập để thực hiện hành động này",
         INVALID_TOKEN: "Token không hợp lệ hoặc đã hết hạn",
         EMAIL_NOT_VERIFIED: "Email chưa được xác minh",
         EMAIL_VERIFIED: "Email đã được xác minh",
+        EMAIL_ALREADY_EXISTS: "Email đã được sử dụng",
+        PHONENUMBER_ALREADY_EXISTS: "Số điện thoại đã được sử dụng",
+        USERNAME_ALREADY_EXISTS: "Tên người dùng đã được sử dụng",
+        INVALID_EMAIL: "Email không hợp lệ",
+    },
+    PASSWORD: {
         PASSWORD_RESET_SUCCESS: "Đặt lại mật khẩu thành công",
         PASSWORD_RESET_FAILED: "Đặt lại mật khẩu thất bại, vui lòng thử lại",
         PASSWORD_CHANGE_SUCCESS: "Đổi mật khẩu thành công",
         PASSWORD_CHANGE_FAILED: "Đổi mật khẩu thất bại, vui lòng thử lại",
-        EMAIL_ALREADY_EXISTS: "Email đã được sử dụng",
-        USERNAME_ALREADY_EXISTS: "Tên người dùng đã được sử dụng",
-        INVALID_EMAIL: "Email không hợp lệ",
-        INVALID_PASSWORD: "Mật khẩu không hợp lệ",
-        AUTH_ACCOUNT_INACTIVE: "Tài khoản của bạn chưa được kích hoạt hoặc đã bị vô hiệu hóa",
+        PASSWORD_TOLONG: "Mật khẩu của bạn quá dài",
+        PASSWORD_TOSHORT: "Mật khẩu của bạn quá ngắn",
+        PASSWORD_INVALID: "Mật khẩu không hợp lệ",
     },
     USER: {
         GET_SUCCESS: "Lấy danh sách người dùng thành công",
@@ -34,9 +39,9 @@ const MESSAGES = {
         DELETE_SUCCESS: "Xóa người dùng thành công",
         NOT_FOUND: "Không tìm thấy người dùng",
         NAME_REQUIRED: "Tên người dùng là bắt buộc",
-        EMAIL_REQUIRED: "Email là bắt buộc",
-        EMAIL_EXISTS: "Email đã tồn tại",
+        FULLNAME_REQUIRED: "Tên đầy đủ là bắt buộc",
         INVALID_CREDENTIALS: "Thông tin đăng nhập không hợp lệ",
+        AUTH_ACCOUNT_INACTIVE: "Tài khoản của bạn chưa được kích hoạt hoặc đã bị vô hiệu hóa",
     },
     PRODUCT: {
         GET_SUCCESS: "Lấy danh sách sản phẩm thành công",
@@ -131,11 +136,15 @@ const MESSAGES = {
 
     EMAIL: {
         SEND_SUCCESS: "Gửi email thành công",
+        EMAIL_REQUIRED: "Email là bắt buộc",
+        EMAIL_EXISTS: "Email đã tồn tại",
+        EMAIL_INVALID: "Email của bạn không hợp lệ",
         SEND_FAILED: "Gửi email thất bại, vui lòng thử lại sau",
         VERIFICATION_SUBJECT: "Xác minh tài khoản của bạn",
         RESET_PASSWORD_SUBJECT: "Đặt lại mật khẩu cho tài khoản của bạn",
         VERIFICATION_BODY: "Vui lòng nhấp vào liên kết sau để xác minh tài khoản của bạn: ",
         RESET_PASSWORD_BODY: "Bạn đã yêu cầu đặt lại mật khẩu. Nhấn vào link dưới đây để tiếp tục: ",
+        
     },
 };
 

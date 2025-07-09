@@ -1,5 +1,32 @@
+import { verify } from "jsonwebtoken";
 import mongoose from "mongoose";
+import { number } from "zod/v4-mini";
 
 const cartSchema = new mongoose.Schema({}, {
-    
-})
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+    },
+    items: [
+        {
+            product: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User',
+                required: true,
+            },
+            quantity: {
+                type: Number,
+                default: 1,
+                min: 1,
+            }
+        }
+    ]
+}, {
+    timeStamps: true,
+    versionKey: false
+});
+
+const Cart = mongoose.model("Cart", cartSchema);
+
+export default Cart;
