@@ -1,7 +1,5 @@
-import { verify } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
-import { number } from "zod/v4-mini";
-
 const cartSchema = new mongoose.Schema({}, {
     user: {
         type: mongoose.Schema.Types.ObjectId,

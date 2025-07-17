@@ -8,6 +8,7 @@ import { JWT_EXPIRES_IN, JWT_EXPIRES_IN_FOR_EMAIL, JWT_SECRET_KEY, JWT_SECRET_KE
 import jwt from "jsonwebtoken"
 import sendMail from "../../common/helpers/mailSender.js";
 import emailTemplate from "../../common/helpers/emailTemplate.js";
+import { createCartForUser } from "../cart/cart.service.js";
 export const authRegister = handleAsync(async (req, res, next) => {
     const { email, password, phoneNumber } = req.body;
 
@@ -56,6 +57,9 @@ export const authRegister = handleAsync(async (req, res, next) => {
             emailContent
         );
         
+        //them gio hang mac dinh
+        createCartForUser
+
         //resonse
         newUser.password = undefined;
         return res.status(201).json(createResponse(true, 201, MESSAGES.AUTH.REGISTER_SUCCESS, newUser));
@@ -71,6 +75,11 @@ export const authRegister = handleAsync(async (req, res, next) => {
 export const authLogin = handleAsync(async (req, res, next) => {
     const { email,password } = req.body;
     const existingUser = await User.findOne({ email });
+    const isEmailVerified = existingUser.isVerifyEmail;
+
+    if (!isEmailVerified) {
+        return next(createError(400, MESSAGES.AUTH.EMAIL_NOT_VERIFIED));
+    }
 
     if (!existingUser) {
         return next(createError(400, MESSAGES.AUTH.LOGIN_FAILED))

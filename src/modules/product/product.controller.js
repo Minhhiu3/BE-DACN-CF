@@ -14,7 +14,7 @@ export const createProduct = handleAsync(async (req, res, next) => {
 
 // Lấy danh sách tất cả sản phẩm (chưa bị xóa mềm)
 export const fetchAllProduct = handleAsync(async (req, res, next) => {
-    const data = await Product.find({ deletedAt: null });
+    const data = await Product.find({ deletedAt: null }).populate("subCategory brand")
     if (data) {
         return res.json(createResponse(true, 200, "Lấy danh sách sản phẩm thành công", data));
     }

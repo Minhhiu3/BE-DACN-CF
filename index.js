@@ -6,6 +6,7 @@ import errorHandler from './src/common/middlewares/errorHandle.js';
 import { HOST, PORT } from './src/common/configs/eviroments.js';
 import setupSwagger from './src/common/configs/swagger-config.js';
 import upload from './src/common/middlewares/upload.js';
+import { handlePayOsWebhook } from './src/modules/order/order.controller.js';
 // import upload from './src/common/middlewares/upload.js';
 
 connectDB();
@@ -22,7 +23,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use("/api", router);
-
+app.post("/webhook", handlePayOsWebhook);
 //test
 // app.get("/health", (req, res) => {
 //     res.send("API is running...");

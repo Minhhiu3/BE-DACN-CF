@@ -2,57 +2,49 @@ import { z } from "zod";
 import MESSAGES from "../../common/helpers/message.js";
 
 const createProductSchema = z.object({
-    name: z.string().min(1, MESSAGES.PRODUCT.PRODUCT_NAME_REQUIRED),
+  title: z.string().min(1, MESSAGES.PRODUCT.PRODUCT_TITLE_REQUIRED),
 
-    thumbnail: z
-        .string()
-        .url(MESSAGES.PRODUCT.PRODUCT_THUMBNAIL_REQUIRED)
-        .optional(),
+  thumbnail: z
+    .string()
+    .url(MESSAGES.PRODUCT.PRODUCT_THUMBNAIL_REQUIRED),
 
-    specification: z
-        .string()
-        .min(1, MESSAGES.PRODUCT.PRODUCT_SPECIFICATION_REQUIRED)
-        .default("Chưa có thông số kỹ thuật"),
+  description: z
+    .string()
+    .min(1, MESSAGES.PRODUCT.PRODUCT_DESCRIPTION_REQUIRED),
 
+  shortDescription: z.string().optional(),
 
-    price: z
-        .number({
-            required_error: MESSAGES.PRODUCT.PRODUCT_PRICE_REQUIRED,
-            invalid_type_error: MESSAGES.PRODUCT.INVALID_PRICE
-        })
-        .min(0, MESSAGES.PRODUCT.INVALID_PRICE),
+  specifications: z.object({}).optional(), // Bạn có thể định nghĩa cụ thể object này nếu cần
 
-    oldPrice: z.number().min(0).optional(),
+  priceDefault: z
+    .number({
+      required_error: MESSAGES.PRODUCT.PRODUCT_PRICE_REQUIRED,
+      invalid_type_error: MESSAGES.PRODUCT.INVALID_PRICE,
+    })
+    .min(0, MESSAGES.PRODUCT.INVALID_PRICE),
 
-    description: z
-        .string()
-        .min(1, MESSAGES.PRODUCT.PRODUCT_DESCRIPTION_REQUIRED)
-        .default("Chưa có mô tả"),
+  slug: z
+    .string()
+    .min(1, MESSAGES.PRODUCT.PRODUCT_SLUG_REQUIRED),
 
+  brand: z.string().min(1, MESSAGES.PRODUCT.PRODUCT_BRAND_REQUIRED), // Mongo ObjectId dạng string
 
-    rating: z
-        .number()
-        .min(0)
-        .max(5)
-        .default(0),
+  subCategory: z.string().min(1, MESSAGES.PRODUCT.PRODUCT_SUBCATEGORY_REQUIRED),
 
-    stock: z
-        .number()
-        .min(0, MESSAGES.PRODUCT.PRODUCT_STOCK_REQUIRED)
-        .default(0),
+  seoTitle: z.string().optional(),
+  seoDescription: z.string().optional(),
+  tags: z.array(z.string()).optional(),
 
-    soldCount: z
-        .number()
-        .min(0)
-        .default(0),
-
-    image: z
-        .string()
-        .optional(),
-
-    slug: z
-        .string()
-        .min(1, MESSAGES.PRODUCT.PRODUCT_SLUG_REQUIRED)
+  variants: z.array(
+    z.object({
+      size: z.enum(["S", "M", "L", "XL", "XXL"]),
+      color: z.enum(["Red", "Blue", "Green", "Black", "White", "Orange"]),
+      price: z.number().min(0),
+      stock: z.number().min(0),
+      sku: z.string().min(1),
+      images: z.array(z.string().url()).optional(),
+    })
+  ).min(1, MESSAGES.PRODUCT.PRODUCT_VARIANTS_REQUIRED)
 });
 
 export default createProductSchema;

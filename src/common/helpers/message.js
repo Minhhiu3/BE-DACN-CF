@@ -43,30 +43,36 @@ const MESSAGES = {
         INVALID_CREDENTIALS: "Thông tin đăng nhập không hợp lệ",
         AUTH_ACCOUNT_INACTIVE: "Tài khoản của bạn chưa được kích hoạt hoặc đã bị vô hiệu hóa",
     },
-    PRODUCT: {
-        GET_SUCCESS: "Lấy danh sách sản phẩm thành công",
-        GET_BY_ID_SUCCESS: "Lấy thông tin sản phẩm thành công",
-        CREATE_SUCCESS: "Tạo sản phẩm thành công",
-        UPDATE_SUCCESS: "Cập nhật sản phẩm thành công",
-        DELETE_SUCCESS: "Xóa sản phẩm thành công",
-        CREATE_ERROR: "Lỗi khi tạo sản phẩm",
-        UPDATE_ERROR: "Lỗi khi cập nhật sản phẩm",
-        DELETE_ERROR: "Lỗi khi xóa sản phẩm",
-        CREATE_ERROR_EXISTS: "Sản phẩm đã tồn tại",
-        NOT_FOUND: "Không tìm thấy sản phẩm",
-        NAME_REQUIRED: "Tên sản phẩm là bắt buộc",
-        PRICE_REQUIRED: "Giá sản phẩm là bắt buộc",
-        INVALID_PRICE: "Giá sản phẩm không hợp lệ",
-        SLUG_REQUIRED: "Slug sản phẩm là bắt buộc",
-        PRODUCT_NAME_REQUIRED: "Bạn chưa có tên sản phẩm",
-        PRODUCT_PRICE_REQUIRED: "Bạn chưa có giá sản phẩm",
-        PRODUCT_DESCRIPTION_REQUIRED: "Bạn chưa có mô tả sản phẩm",
-        PRODUCT_STOCK_REQUIRED: "Bạn chưa có số lượng sản phẩm",
-        PRODUCT_IMAGE_REQUIRED: "Bạn chưa có hình ảnh sản phẩm",
-        PRODUCT_SPECIFICATION_REQUIRED: "Bạn chưa có thông số kỹ thuật của sản phẩm",
-        PRODUCT_SLUG_REQUIRED: "Bạn chưa có slug sản phẩm",
-        PRODUCT_THUMBNAIL_REQUIRED: "Bạn chưa có hình ảnh đại diện sản phẩm",
-    },
+   PRODUCT: {
+    // CRUD messages
+    GET_SUCCESS: "Lấy danh sách sản phẩm thành công",
+    GET_BY_ID_SUCCESS: "Lấy thông tin sản phẩm thành công",
+    CREATE_SUCCESS: "Tạo sản phẩm thành công",
+    UPDATE_SUCCESS: "Cập nhật sản phẩm thành công",
+    DELETE_SUCCESS: "Xóa sản phẩm thành công",
+
+    // Error handling
+    CREATE_ERROR: "Lỗi khi tạo sản phẩm",
+    UPDATE_ERROR: "Lỗi khi cập nhật sản phẩm",
+    DELETE_ERROR: "Lỗi khi xóa sản phẩm",
+    CREATE_ERROR_EXISTS: "Sản phẩm đã tồn tại",
+    NOT_FOUND: "Không tìm thấy sản phẩm",
+
+    // Validation errors (standardized)
+    PRODUCT_TITLE_REQUIRED: "Bạn chưa nhập tiêu đề sản phẩm",
+    PRODUCT_THUMBNAIL_REQUIRED: "Bạn chưa có hình ảnh đại diện sản phẩm hoặc URL không hợp lệ",
+    PRODUCT_DESCRIPTION_REQUIRED: "Bạn chưa có mô tả sản phẩm",
+    PRODUCT_SHORT_DESCRIPTION_REQUIRED: "Bạn chưa có mô tả ngắn sản phẩm",
+    PRODUCT_SPECIFICATION_REQUIRED: "Bạn chưa có thông số kỹ thuật của sản phẩm",
+    PRODUCT_PRICE_REQUIRED: "Bạn chưa có giá sản phẩm",
+    PRODUCT_SLUG_REQUIRED: "Bạn chưa có slug sản phẩm",
+    PRODUCT_BRAND_REQUIRED: "Bạn chưa chọn thương hiệu",
+    PRODUCT_SUBCATEGORY_REQUIRED: "Bạn chưa chọn danh mục con",
+    PRODUCT_VARIANTS_REQUIRED: "Bạn cần cung cấp ít nhất một biến thể sản phẩm",
+
+    INVALID_PRICE: "Giá sản phẩm không hợp lệ",
+},
+
 
     CATEGORY: {
         GET_SUCCESS: "Lấy danh sách danh mục thành công",

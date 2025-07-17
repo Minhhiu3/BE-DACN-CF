@@ -17,6 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ngrok/ngrok": "^1.5.1",
+    "@payos/node": "^1.0.10",
     "bcryptjs": "^3.0.2",
     "cloudinary": "^1.27.1",
     "cors": "^2.8.5",
