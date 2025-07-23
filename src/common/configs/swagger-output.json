@@ -590,7 +590,7 @@
         }
       }
     },
-    "/cart/": {
+    "/cart/update": {
       "patch": {
         "description": "",
         "responses": {
@@ -598,7 +598,9 @@
             "description": ""
           }
         }
-      },
+      }
+    },
+    "/cart/": {
       "get": {
         "description": "",
         "responses": {
@@ -606,7 +608,9 @@
             "description": ""
           }
         }
-      },
+      }
+    },
+    "/cart/delete": {
       "delete": {
         "description": "",
         "responses": {
@@ -616,7 +620,7 @@
         }
       }
     },
-    "/orders/": {
+    "/orders/update": {
       "patch": {
         "description": "",
         "responses": {
@@ -624,7 +628,9 @@
             "description": ""
           }
         }
-      },
+      }
+    },
+    "/orders/": {
       "get": {
         "description": "",
         "responses": {
@@ -632,7 +638,9 @@
             "description": ""
           }
         }
-      },
+      }
+    },
+    "/orders/delete": {
       "delete": {
         "description": "",
         "responses": {

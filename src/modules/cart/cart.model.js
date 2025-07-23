@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
-const cartSchema = new mongoose.Schema({}, {
+const cartSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
@@ -10,7 +10,7 @@ const cartSchema = new mongoose.Schema({}, {
         {
             product: {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'User',
+                ref: 'Product', // Nên là Product, không phải User
                 required: true,
             },
             quantity: {
@@ -21,7 +21,7 @@ const cartSchema = new mongoose.Schema({}, {
         }
     ]
 }, {
-    timeStamps: true,
+    timestamps: true, // đúng là timestamps, không phải timeStamps
     versionKey: false
 });
 

@@ -58,7 +58,9 @@ export const authRegister = handleAsync(async (req, res, next) => {
         );
         
         //them gio hang mac dinh
-        createCartForUser
+        const cartUserData = await createCartForUser(newUser._id);
+        console.log(cartUserData);
+        
 
         //resonse
         newUser.password = undefined;
